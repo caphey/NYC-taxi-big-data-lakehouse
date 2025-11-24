@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  spark:
+    image: jupyter/pyspark-notebook:latest
+    container_name: spark_master
+    ports:
+      - "8888:8888"
+      - "4040:4040"
+    volumes:
+      - ./data:/home/jovyan/data
+      - ./src:/home/jovyan/src 
+    environment:
+      - JUPYTER_TOKEN=my_secure_token
